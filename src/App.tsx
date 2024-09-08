@@ -1,5 +1,5 @@
 import { ConnectionProvider, UnifiedWalletProvider, WalletName } from "@jup-ag/wallet-adapter";
-import { BitgetWalletAdapter, PhantomWalletAdapter, SolflareWalletAdapter } from "@solana/wallet-adapter-wallets";
+import { BitgetWalletAdapter, PhantomWalletAdapter, SalmonWalletAdapter, SolflareWalletAdapter } from "@solana/wallet-adapter-wallets";
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 import { toast, Toaster } from "sonner";
 import RootLayout from "./routes/rootLayout";
@@ -37,7 +37,7 @@ export default function App() {
         endpoint={`https://devnet.helius-rpc.com/?api-key=${import.meta.env.VITE_HELIUS_API}`}
       >
         <UnifiedWalletProvider
-          wallets={[new PhantomWalletAdapter(), new SolflareWalletAdapter(), new BitgetWalletAdapter()]}
+          wallets={[new PhantomWalletAdapter(), new SolflareWalletAdapter(), new BitgetWalletAdapter(), new SalmonWalletAdapter()]}
           config={{
             autoConnect: true,
             env: "devnet",
