@@ -9,7 +9,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "../components/ui/table";
+} from "@/components/ui/table";
 
 export default function Dashboard() {
   const { connected, publicKey } = useUnifiedWallet();
@@ -36,7 +36,7 @@ export default function Dashboard() {
       <h1 className="font-semibold">Dashboard</h1>
       {connected ? (
         <>
-          <h2>Balance : {balance} SOL</h2>
+          <p className="text-lg">Balance : {balance} SOL</p>
           <h2>Transaction History</h2>
           <Table>
             <TableHeader>
