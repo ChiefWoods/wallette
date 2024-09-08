@@ -1,5 +1,6 @@
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetDescription,
   SheetHeader,
@@ -26,9 +27,11 @@ export default function Sidebar() {
               <h1 className="text-2xl font-semibold">Wallette</h1>
             </SheetTitle>
             <SheetDescription className="flex flex-col gap-y-4 items-start">
-              <Button asChild variant="outline" className="w-full flex justify-start">
-                <Link to="/dashboard">Dashboard</Link>
-              </Button>
+              <SheetClose asChild>
+                <Button asChild variant="outline" className="w-full flex justify-start">
+                  <Link to="/dashboard">Dashboard</Link>
+                </Button>
+              </SheetClose>
               <Badge variant="outline">More Pages and Features Coming Soon!</Badge>
             </SheetDescription>
           </SheetHeader>
