@@ -1,50 +1,61 @@
-# React + TypeScript + Vite
+# Wallette
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Wallet analytics dashboard for SuperteamMY
 
-Currently, two official plugins are available:
+[Live on Devnet](https://wallette.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[Source Repository](https://github.com/ChiefWoods/wallette)
 
-## Expanding the ESLint configuration
+## Built With
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Languages
 
-- Configure the top-level `parserOptions` property like this:
+- [![HTML5](https://img.shields.io/badge/HTML5-white?style=for-the-badge&logo=html5&logoColor=e65127)](https://html5.org/)
+- [![CSS3](https://img.shields.io/badge/CSS3-white?style=for-the-badge&logo=css3&logoColor=306AF1)](https://www.w3.org/Style/CSS/Overview.en.html)
+- [![TypeScript](https://img.shields.io/badge/TypeScript-white?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+- [![React](https://img.shields.io/badge/React-23272f?style=for-the-badge&logo=react)](https://react.dev/)
+- [![React Router](https://img.shields.io/badge/ReactRouter-ffffff?style=for-the-badge&logo=react-router)](https://reactrouter.com/)
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Libraries
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- [shadcn/ui](https://ui.shadcn.com/)
+- [@solana/web3.js](https://solana-labs.github.io/solana-web3.js/)
+- [@solana/spl-token](https://solana-labs.github.io/solana-program-library/token/js/index.html)
+- [@jup-ag/wallet-adapter](https://unified.jup.ag/)
+- [ESLint](https://eslint.org/)
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Bundlers
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- [![Vite](https://img.shields.io/badge/Vite-ffd028?style=for-the-badge&logo=Vite)](https://vitejs.dev/)
+
+### Tools
+
+- [![!Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-2c2c32?style=for-the-badge&logo=visual-studio-code&logoColor=007ACC)](https://code.visualstudio.com/)
+
+## Roadmap
+
+- Switch between clusters (mainnet, devnet, testnet, local, custom)
+- Display more account information (token accounts)
+- Search for account, token, program
+- Client side no-code toolkit (creating TOKEN2022 tokens, NFTs and collections, with toggable Metaplex Token Metadata or Core option, updating, burning and transferring assets)
+- Upload files using Irys
+
+
+## Issues
+
+View the [open issues](https://github.com/ChiefWoods/wallette/issues) for a full list of proposed features and known bugs.
+
+## Acknowledgements
+
+### Resources
+
+- [Shields.io](https://shields.io/)
+
+### Hosting and API
+
+- [Vercel](https://vercel.com/)
+- [Helius](https://www.helius.dev/)
+
+## Contact
+
+[chii.yuen@hotmail.com](mailto:chii.yuen@hotmail.com)
