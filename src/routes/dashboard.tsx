@@ -15,11 +15,13 @@ import { Loader2 } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 
 export default function Dashboard() {
+  const TX_PAGINATION_INCREMENT = 15;
+
   const { connected, publicKey } = useUnifiedWallet();
   const { connection } = useConnection();
   const [balance, setBalance] = useState<number | null>(null);
   const [transactions, setTransactions] = useState<ConfirmedSignatureInfo[]>([]);
-  const [txLimit, setTxLimit] = useState<number>(15);
+  const [txLimit, setTxLimit] = useState<number>(TX_PAGINATION_INCREMENT);
   const [isFetching, setIsFetching] = useState<boolean>(false);
 
   useEffect(() => {
@@ -87,7 +89,7 @@ export default function Dashboard() {
             </TableBody>
           </Table>
           {Boolean(transactions.length) &&
-            <Button disabled={isFetching} onClick={() => setTxLimit(p => p + 15)}>
+            <Button disabled={isFetching} onClick={() => setTxLimit(p => p + TX_PAGINATION_INCREMENT)}>
               {isFetching && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
               Load More
             </Button>
