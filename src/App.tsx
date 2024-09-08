@@ -6,21 +6,27 @@ import RootLayout from "./routes/rootLayout";
 import Dashboard from "./routes/dashboard";
 import Spinner from "./components/spinner";
 
+const redirectsFromRoot = ["/dashboard"];
+
 const router = createBrowserRouter([
-	{
-		path: "/",
-		element: <RootLayout />,
-		children: [
-			{
-				path: "/",
-				element: <Navigate to="/dashboard" />,
-			},
-			{
-				path: "dashboard",
-				element: <Dashboard />,
-			},
-		]
-	}
+  {
+    path: "/",
+    element: <RootLayout />,
+    children: [
+      {
+        path: "/",
+        element: <Navigate to="/dashboard" />,
+      },
+      {
+        path: "dashboard",
+        element: <Dashboard />,
+      },
+    ]
+  },
+  ...redirectsFromRoot.map((path) => ({
+    path,
+    element: <Navigate to={path} />,
+  })),
 ]);
 
 export default function App() {
@@ -137,7 +143,7 @@ export default function App() {
             provider: "solana-wallet-adapter",
           }}
         >
-          <RouterProvider router={router} fallbackElement={<Spinner className="size-6/12"/>}/>
+          <RouterProvider router={router} fallbackElement={<Spinner className="size-6/12" />} />
         </UnifiedWalletProvider>
       </ConnectionProvider>
     </>
