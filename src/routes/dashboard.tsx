@@ -13,9 +13,10 @@ import {
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Badge } from "@/components/ui/badge";
 
 export default function Dashboard() {
-  const TX_PAGINATION_INCREMENT = 15;
+  const TX_PAGINATION_INCREMENT = 10;
 
   const { connected, publicKey } = useUnifiedWallet();
   const { connection } = useConnection();
@@ -73,7 +74,9 @@ export default function Dashboard() {
                   <TableCell className="w-full min-w-[150px] text-ellipsis">{transaction.signature}</TableCell>
                   <TableCell className="min-w-[125px]">{transaction.blockTime}</TableCell>
                   <TableCell className="min-w-[125px]">{transaction.slot}</TableCell>
-                  <TableCell className={`text-right min-w-[100px] font-bold ${transaction.err ? "text-red-400" : "text-green-400"}`}>{transaction.err ? "Error" : "Success"}</TableCell>
+                  <TableCell className={`text-right min-w-[100px]`}>
+                    
+                    <Badge className={`font-bold ${transaction.err ? "text-red-100 bg-red-500" : "text-green-100 bg-green-500"}`}>{transaction.err ? "Error" : "Success"}</Badge></TableCell>
                 </TableRow>
               )) :
                 (<>
